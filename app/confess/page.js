@@ -190,7 +190,7 @@ export default function ConfessPage() {
             </button>
             
             <p className="text-sm text-gray-500 italic">
-              Let your friends and family know! 🎊
+              Tell the creator that you said yes! 😊
             </p>
           </div>
         </Modal>
