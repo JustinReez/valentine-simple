@@ -86,6 +86,14 @@ export default function ConfessPage() {
     setShowModal(true);
   };
 
+  const handleShareToWhatsApp = () => {
+    const message = encodeURIComponent(
+      "I said YES! 💕\n\n" + window.location.origin
+    );
+    const whatsappUrl = `https://wa.me/?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const handleModalClose = () => {
     setShowModal(false);
     // Could redirect to a final page or stay here
@@ -168,8 +176,21 @@ export default function ConfessPage() {
             <p className="text-xl xs:text-2xl sm:text-2xl text-gray-700 mb-4 sm:mb-6 px-4">
               I'm the happiest person in the world right now! 🌟
             </p>
-            <p className="text-lg xs:text-xl sm:text-xl text-gray-600 px-4">
+            <p className="text-lg xs:text-xl sm:text-xl text-gray-600 px-4 mb-6">
               This is just the beginning of our beautiful story together...
+            </p>
+            
+            {/* WhatsApp Share Button */}
+            <button
+              onClick={handleShareToWhatsApp}
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-base sm:text-lg font-bold rounded-full shadow-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 mx-auto mb-4"
+            >
+              <span className="text-xl sm:text-2xl">📱</span>
+              <span>Share the Good News on WhatsApp!</span>
+            </button>
+            
+            <p className="text-sm text-gray-500 italic">
+              Let your friends and family know! 🎊
             </p>
           </div>
         </Modal>
